@@ -1,0 +1,26 @@
+# Python dependencies for MetaModelNet LEO channel prediction
+# Tested on Python 3.10.
+#
+# IMPORTANT: the versions below are a known-compatible reference set, NOT
+# necessarily the exact versions you trained with. For true reproducibility,
+# regenerate this file from your real working environment:
+#
+#     pip freeze | grep -iE "torch|numpy|scipy|h5py|matplotlib" > requirements.txt
+#
+# and replace the lines below with the output.
+
+torch==2.5.1
+numpy==1.26.4
+scipy==1.13.1
+h5py==3.11.0
+matplotlib==3.9.2
+
+# --- A note on torch + CUDA -------------------------------------------------
+# The line `torch==2.5.1` above installs the DEFAULT build from PyPI, which may
+# not match your CUDA toolkit. The training results were produced on a CUDA 12.1
+# GPU. To install the matching GPU build explicitly:
+#
+#     pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+#
+# CPU-only or Apple Silicon (MPS) users can install plain `torch==2.5.1` from
+# PyPI; the notebook falls back to CPU/MPS automatically and evaluation runs fine.
